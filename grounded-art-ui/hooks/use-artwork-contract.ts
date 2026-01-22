@@ -1,6 +1,6 @@
 "use client";
 
-import { useReadContract, useAccount } from "wagmi";
+import { useReadContract } from "wagmi";
 import { useState, useEffect } from "react";
 
 // ArtworkRegistry ABI - ERC-721 compatible
@@ -52,7 +52,7 @@ const ARTWORK_REGISTRY_ADDRESS = process.env.NEXT_PUBLIC_ARTWORK_REGISTRY_ADDRES
   "0x0000000000000000000000000000000000000000";
 
 // Chain configuration - Update based on your deployment
-const CHAIN_ID = parseInt(process.env.NEXT_PUBLIC_CHAIN_ID || "80001"); // Polygon Mumbai default
+const CHAIN_ID = parseInt(process.env.NEXT_PUBLIC_CHAIN_ID || "80002"); // Polygon Amoy default
 
 interface ArtworkData {
   title: string;
@@ -75,7 +75,6 @@ interface UseArtworkContractOptions {
  */
 export function useArtworkContract(options: UseArtworkContractOptions = {}) {
   const { tokenId, enabled = true } = options;
-  const { address } = useAccount();
 
   const [artworkData, setArtworkData] = useState<ArtworkData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -142,11 +141,10 @@ export function useArtworkContract(options: UseArtworkContractOptions = {}) {
  * Hook to fetch all artworks (requires totalSupply and tokenURI)
  */
 export function useAllArtworks() {
-  const { address } = useAccount();
   const [artworkIds, setArtworkIds] = useState<number[]>([]);
-  const [artworks, setArtworks] = useState<ArtworkData[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const artworks: ArtworkData[] = [];
+  const isLoading = false;
+  const error: string | null = null;
 
   // Get total supply
   const { data: totalSupply } = useReadContract({

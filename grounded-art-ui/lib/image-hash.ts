@@ -123,7 +123,7 @@ export async function unlockImage(
   // 4. Return blob URL
 
   // For now, this is a placeholder that demonstrates the flow
-  const key = await deriveGeofenceKey(artworkId, userAddress, geofenceProof);
+  await deriveGeofenceKey(artworkId, userAddress, geofenceProof);
   
   // TODO: Fetch encrypted image from storage
   // const encryptedImage = await fetchEncryptedImage(imageHash);
@@ -160,6 +160,8 @@ export async function verifyGeofence(
   // 4. Store proof on-chain or return for immediate use
 
   // Placeholder: return a proof string
-  const proof = `${artworkId}-${userLat}-${userLng}-${Date.now()}`;
+  const proof = `${artworkId}-${userLat}-${userLng}-${Date.now()}${
+    signature ? "-sig" : ""
+  }`;
   return proof;
 }

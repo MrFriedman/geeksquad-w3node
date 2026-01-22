@@ -5,7 +5,7 @@ import { MapView } from "@/components/grounded-art/map-view";
 import { ArtDetailSheet } from "@/components/grounded-art/art-detail-sheet";
 import { MarketplaceGrid } from "@/components/grounded-art/marketplace-grid";
 import { BottomNav } from "@/components/grounded-art/bottom-nav";
-import { Bell, Menu, Search } from "lucide-react";
+import { Bell, Search } from "lucide-react";
 import Image from "next/image";
 import Loading from "./loading";
 

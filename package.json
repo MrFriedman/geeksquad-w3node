@@ -1,0 +1,12 @@
+{
+  "name": "grounded-art",
+  "private": true,
+  "scripts": {
+    "dev:ui": "npm --prefix grounded-art-ui run dev",
+    "build:ui": "npm --prefix grounded-art-ui run build",
+    "lint:ui": "npm --prefix grounded-art-ui run lint",
+    "dev:api": "npm --prefix grounded-art-api run dev",
+    "start:api": "npm --prefix grounded-art-api run start"
+  }
+}
+

@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useAccount, useConnectModal } from "@rainbow-me/rainbowkit";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
+import { useAccount } from "wagmi";
 import { IdentityChoice } from "@/components/grounded-art/identity-choice";
 import { useRouter } from "next/navigation";
 
 export default function OnboardingPage() {
-  const { isConnected, address } = useAccount();
+  const { isConnected } = useAccount();
   const { openConnectModal } = useConnectModal();
   const router = useRouter();
   const [identity, setIdentity] = useState<"collector" | "creator" | null>(

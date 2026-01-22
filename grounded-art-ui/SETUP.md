@@ -40,7 +40,7 @@
 3. **Web3 Integration**
    - RainbowKit setup with custom theme
    - Wagmi + Viem configuration
-   - Support for Polygon Mumbai & Scroll Sepolia
+   - Support for Polygon Amoy & Scroll Sepolia
    - Identity Choice screen component
 
 4. **Geofencing**
@@ -62,17 +62,9 @@
 
 ## Next Steps
 
-### 1. Install Web3 Dependencies
+### 1. Deploy Smart Contract
 
-The package.json has been updated, but you need to install:
-
-```bash
-npm install @rainbow-me/rainbowkit wagmi viem @tanstack/react-query
-```
-
-### 2. Deploy Smart Contract
-
-Deploy your `ArtworkRegistry.sol` contract to Polygon Mumbai or Scroll Sepolia.
+Deploy your `ArtworkRegistry.sol` contract to Polygon Amoy or Scroll Sepolia.
 
 Required interface:
 ```solidity
@@ -88,14 +80,14 @@ function getArtworkData(uint256 tokenId) external view returns (
 );
 ```
 
-### 3. Update Contract Address
+### 2. Update Contract Address
 
 Add your deployed contract address to `.env.local`:
 ```
 NEXT_PUBLIC_ARTWORK_REGISTRY_ADDRESS=0xYourContractAddress
 ```
 
-### 4. Replace Sample Data
+### 3. Replace Sample Data
 
 Update the following files to use contract hooks instead of hardcoded data:
 - `app/(app)/map/page.tsx`
@@ -108,21 +100,21 @@ Example:
 const { artworkData, isLoading } = useArtworkContract({ tokenId: 1 });
 ```
 
-### 5. Implement Image Storage
+### 4. Implement Image Storage
 
 Set up IPFS or another storage solution for encrypted images:
 - Upload encrypted images
 - Store hash on-chain
 - Implement `unlockImage` in `lib/image-hash.ts`
 
-### 6. Add Voice Notes
+### 5. Add Voice Notes
 
 Implement voice note storage and playback:
 - Upload to IPFS or storage
 - Store hash in contract metadata
 - Update `VoiceNotePlayer` component
 
-### 7. Dual Language Support
+### 6. Dual Language Support
 
 Add language switching:
 - Create translation files
@@ -168,7 +160,7 @@ lib/
 Required:
 - `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` - From WalletConnect Cloud
 - `NEXT_PUBLIC_ARTWORK_REGISTRY_ADDRESS` - Your contract address
-- `NEXT_PUBLIC_CHAIN_ID` - 80001 (Polygon) or 534351 (Scroll)
+- `NEXT_PUBLIC_CHAIN_ID` - 80002 (Polygon Amoy) or 534351 (Scroll Sepolia)
 
 ## Testing
 

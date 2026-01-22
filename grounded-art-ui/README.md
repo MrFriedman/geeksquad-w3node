@@ -24,7 +24,7 @@ Grounded Art connects African artists with collectors through location-based, bl
 - **Styling**: Tailwind CSS v4 with custom tactile textures
 - **UI Components**: Shadcn/UI (Radix UI primitives)
 - **Web3**: RainbowKit + Wagmi + Viem
-- **Blockchain**: Polygon Mumbai / Scroll zkEVM (testnet)
+- **Blockchain**: Polygon Amoy / Scroll Sepolia (testnet)
 
 ## Getting Started
 
@@ -47,12 +47,12 @@ yarn install
 
 2. Set up environment variables:
 
-Create a `.env.local` file:
+Copy `.env.example` to `.env.local` and fill in values:
 
 ```env
 NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_walletconnect_project_id
 NEXT_PUBLIC_ARTWORK_REGISTRY_ADDRESS=your_contract_address
-NEXT_PUBLIC_CHAIN_ID=80001  # Polygon Mumbai or 534351 for Scroll Sepolia
+NEXT_PUBLIC_CHAIN_ID=80002  # Polygon Amoy or 534351 for Scroll Sepolia
 ```
 
 3. Get a WalletConnect Project ID:

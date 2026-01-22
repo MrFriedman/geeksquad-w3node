@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { ArtPin } from "./art-pin";
 import { MapPin, Navigation, Plus, Minus } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 interface ArtLocation {
   id: string;

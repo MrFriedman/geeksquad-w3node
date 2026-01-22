@@ -1,9 +1,8 @@
 "use client";
 
 import { BottomNav } from "@/components/grounded-art/bottom-nav";
-import { Bell, Menu, Search } from "lucide-react";
+import { Bell, Search } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import Image from "next/image";
 
 export default function AppLayout({
   children,
